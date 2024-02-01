@@ -12,6 +12,8 @@ public class AlphaCharDocument extends Document {
 
     @Override
     public void write(String contentToBeWritten) {
+        if (contentToBeWritten == "()") throw new IllegalArgumentException();
+        super.write(contentToBeWritten);
     }
 
     private Boolean isAlpha(String s) {

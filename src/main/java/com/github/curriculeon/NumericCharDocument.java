@@ -12,6 +12,8 @@ public class NumericCharDocument extends Document {
 
     @Override
     public void write(String contentToBeWritten) {
+        if(!contentToBeWritten.matches(".*\\d+.*")) throw new IllegalArgumentException();
+        super.write(contentToBeWritten);
     }
 
     private Boolean isNumeric(String s) {
